@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/my-project
     docker:
-      - image: circleci/node:8-browsers
+      - image: circleci/node:17.2.0-buster-browsers-legacy
     steps:
       - checkout
       - restore_cache:
@@ -13,5 +13,5 @@ jobs:
           key: zeus-ui-3.0-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
             - "node_modules"
-      - run: xvfb-run -a npm run test -- --single-run --no-progress --browser=ChromeNoSandbox
+      - run: xvfb-run -a npm run test -- --watch=false --no-progress --browsers=ChromeNoSandbox
       - run: xvfb-run -a npm run e2e -- --no-progress --config=protractor-ci.conf.js
