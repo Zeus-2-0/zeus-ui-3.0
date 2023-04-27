@@ -14,4 +14,5 @@ jobs:
           paths:
             - "node_modules"
       - run: xvfb-run -a npm run test -- --watch=false --no-progress --browsers=ChromeNoSandbox
-      - run: xvfb-run -a npm run start -- --configuration=../protractor-ci.conf.js
+      - run: xvfb-run -a npm run start
+#      - run: xvfb-run -a npm run start -- --configuration=../protractor-ci.conf.js
