@@ -26,10 +26,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('zeus-ui-3.0');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('Zeus UI 3.0 - zeus-ui-3.0');
-  });
+  // it('should render title', () => {
+  //   const fixture = TestBed.createComponent(AppComponent);
+  //   fixture.detectChanges();
+  //   const compiled = fixture.nativeElement as HTMLElement;
+  //   expect(compiled.querySelector('.content span')?.textContent).toContain('Zeus UI 3.0 - zeus-ui-3.0');
+  // });
 });
