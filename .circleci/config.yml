@@ -5,7 +5,7 @@ jobs:
   build:
     working_directory: ~/my-project
     docker:
-      - image: cimg/node:17.2.0-buster-browsers-legacy
+      - image: cimg/node:20.0.0
     steps:
       - checkout
       - restore_cache:
