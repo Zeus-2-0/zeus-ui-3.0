@@ -1,21 +1,29 @@
 version: 2.1
 orbs:
   jira: circleci/jira@1.0.5
+  browser-tools: circleci/browser-tools@1.2.3
 jobs:
   build:
-    working_directory: ~/my-project
+    working_directory: ~/ng-project
     docker:
-      - image: cimg/node:20.0.0
+      - image: cimg/node:16.13.1-browsers
     steps:
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
+      - run:
+          command: |
+            google-chrome --version
+            chromedriver --version
+          name: Check install
       - checkout
       - restore_cache:
-          key: zeus-ui-3.0-{{ .Branch }}-{{ checksum "package.json" }}
+          key: ng-project-{{ .Branch }}-{{ checksum "package.json" }}
       - run: npm install
       - save_cache:
-          key: zeus-ui-3.0-{{ .Branch }}-{{ checksum "package.json" }}
+          key: ng-project-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
             - "node_modules"
-      - run: npm run test -- --watch=false --no-progress --browsers=ChromeNoSandbox
+      - run: npm run test
 #      - run: xvfb-run -a npm run start
 #      - run: xvfb-run -a npm run start -- --configuration=../protractor-ci.conf.js
 workflows:
