@@ -4,7 +4,7 @@ orbs:
   browser-tools: circleci/browser-tools@1.2.3
 jobs:
   build:
-    working_directory: ~/zeus-ui-3.0
+    working_directory: ~/ng-project
     docker:
       - image: cimg/node:16.13.1-browsers
     steps:
@@ -17,10 +17,10 @@ jobs:
           name: Check install
       - checkout
       - restore_cache:
-          key: zeus-ui-3.0-{{ .Branch }}-{{ checksum "package.json" }}
+          key: ng-project-{{ .Branch }}-{{ checksum "package.json" }}
       - run: npm install
       - save_cache:
-          key: zeus-ui-3.0-{{ .Branch }}-{{ checksum "package.json" }}
+          key: ng-project-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
             - "node_modules"
       - run: npm run test
