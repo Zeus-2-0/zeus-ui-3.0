@@ -1,0 +1,30 @@
+h2{
+  font-family: "Montserrat";
+  font-weight: 900; /** black **/
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+
+/*Testimonials*/
+#testimonials{
+  margin: 5% 5%;
+  text-align: center;
+
+  color: #fff;
+}
+
+#testimonial-carousel{
+  background-color: #070A52;
+  /*border-radius: 1%;*/
+}
+
+.carousel-item{
+  padding: 7% 15%;
+}
+
+.testimonial-img{
+  width: 10%;
+  border-radius: 100%;
+  margin: 20px;
+}

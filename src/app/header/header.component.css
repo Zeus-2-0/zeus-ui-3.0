@@ -1,0 +1,13 @@
+
+
+/* Navigation bar */
+.nav-item{
+  padding: 0 18px;
+}
+
+.nav-link{
+  font-family: "Montserrat";
+  fornt-weight: 300; /* light */
+  font-size: 1rem;
+  color: grey;
+}
