@@ -5,7 +5,7 @@ jobs:
   build:
     working_directory: ~/my-project
     docker:
-      - image: circleci/node:17.2.0-buster-browsers-legacy
+      - image: cimg/node:17.2.0-buster-browsers-legacy
     steps:
       - checkout
       - restore_cache:
