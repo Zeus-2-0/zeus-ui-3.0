@@ -5,12 +5,13 @@ jobs:
   build:
     working_directory: ~/my-project
     docker:
-      - image: cimg/node:17.2.0-buster-browsers-legacy
+      - image: cimg/node:20.0.0
     steps:
       - checkout
       - restore_cache:
           key: zeus-ui-3.0-{{ .Branch }}-{{ checksum "package.json" }}
       - run: npm install
+      - run: apt install -y xvbf
       - save_cache:
           key: zeus-ui-3.0-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
