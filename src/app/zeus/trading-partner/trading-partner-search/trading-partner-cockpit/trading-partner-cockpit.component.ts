@@ -12,4 +12,8 @@ export class TradingPartnerCockpitComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSearch(): void {
+
+  }
+
 }
