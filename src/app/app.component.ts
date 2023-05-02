@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AuthService} from "./auth/auth.service";
 import {Subscription} from "rxjs";
 import {User} from "./model/auth/user.model";
+import {environment} from "../environments/environment";
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,7 @@ export class AppComponent implements OnInit, OnDestroy{
    */
   ngOnInit(): void {
     this.authService.autoLogin();
+    console.log("API URL:", environment.apiUrl)
   }
 
   /**

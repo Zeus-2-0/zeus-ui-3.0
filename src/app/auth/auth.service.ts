@@ -5,6 +5,7 @@ import {ZeusApiResponse} from "../model/api/zeus-api-response.model";
 import {Authentication} from "../model/auth/authentication.model";
 import {BehaviorSubject, catchError, map, Observable, Subject, tap, throwError} from "rxjs";
 import {Router} from "@angular/router";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +34,9 @@ export class AuthService {
    * Authenticate the user using Jwt Authentication
    */
   jwtAuthentication(loginRequest:LoginRequest): Observable<ZeusApiResponse<Authentication>> | Observable<any> | Observable<never>{
-    return this.http.post<ZeusApiResponse<Authentication>>(`http://localhost:8088/zeus/jwt/authenticate`,loginRequest)
+    const url = environment.apiUrl + '/zeus/jwt/authenticate';
+    console.log("Url to be used: ", url);
+    return this.http.post<ZeusApiResponse<Authentication>>(url,loginRequest)
       .pipe(tap(apiResponse => this.handleAuthentication(apiResponse, loginRequest)),
             catchError(this.handleError))
   }
