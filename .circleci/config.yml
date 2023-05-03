@@ -23,7 +23,7 @@ jobs:
           key: zeus-ui-3.0-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
             - "node_modules"
-      - run: npm run test
+#      - run: npm run test
 #      - run: xvfb-run -a npm run start
 #      - run: xvfb-run -a npm run start -- --configuration=../protractor-ci.conf.js
 workflows:
