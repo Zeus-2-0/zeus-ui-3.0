@@ -5,27 +5,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
-import { ZeusComponent } from './zeus/zeus.component';
-import { LoginComponent } from './auth/login/login.component';
-import { LogoutComponent } from './auth/logout/logout.component';
 import {FormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {HttpInterceptorService} from "./services/http/http-interceptor.service";
 import {ZeusModule} from "./zeus/zeus.module";
+import {AuthModule} from "./auth/auth.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    HeaderComponent,
-    LoginComponent,
-    LogoutComponent
+    HeaderComponent
   ],
     imports: [
       BrowserModule,
       AppRoutingModule,
       HttpClientModule,
       FormsModule,
+      AuthModule,
       ZeusModule
     ],
   providers: [

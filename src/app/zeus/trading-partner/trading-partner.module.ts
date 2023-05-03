@@ -23,13 +23,17 @@ import {TradingPartnerRoutingModule} from "./trading-partner-routing.module";
     TradingPartnerResultsComponent,
     TradingPartnerEditComponent
   ],
-  exports:[
-    TradingPartnerComponent,
-    TradingPartnerSearchComponent,
-    TradingPartnerCockpitComponent,
-    TradingPartnerResultsComponent,
-    TradingPartnerEditComponent
-  ],
+  /** There is no need to export the above declared components since these components are not used by other modules
+   *  Components that are declared in a module need to be exported only if those components are re-used by other modules
+   **/
+
+  // exports:[
+  //   TradingPartnerComponent,
+  //   TradingPartnerSearchComponent,
+  //   TradingPartnerCockpitComponent,
+  //   TradingPartnerResultsComponent,
+  //   TradingPartnerEditComponent
+  // ],
   imports: [
     RouterModule,
     CommonModule,

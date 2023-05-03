@@ -19,13 +19,16 @@ import { AccountEditComponent } from './account-edit/account-edit.component';
     AccountResultsComponent,
     AccountEditComponent
   ],
-  exports:[
-    AccountComponent,
-    AccountSearchComponent,
-    AccountCockpitComponent,
-    AccountResultsComponent,
-    AccountEditComponent
-  ],
+  /** There is no need to export the above declared components since these components are not used by other modules
+   *  Components that are declared in a module need to be exported only if those components are re-used by other modules
+   **/
+  // exports:[
+  //   AccountComponent,
+  //   AccountSearchComponent,
+  //   AccountCockpitComponent,
+  //   AccountResultsComponent,
+  //   AccountEditComponent
+  // ],
   imports: [
     CommonModule,
     FormsModule,
