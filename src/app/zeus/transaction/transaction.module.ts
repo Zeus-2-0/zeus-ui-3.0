@@ -18,13 +18,16 @@ import { TransactionResultsComponent } from './transaction-search/transaction-re
     TransactionCockpitComponent,
     TransactionResultsComponent
   ],
-  exports:[
-    TransactionComponent,
-    TransactionEditComponent,
-    TransactionSearchComponent,
-    TransactionCockpitComponent,
-    TransactionResultsComponent
-  ],
+  /** There is no need to export the above declared components since these components are not used by other modules
+   *  Components that are declared in a module need to be exported only if those components are re-used by other modules
+   **/
+  // exports:[
+  //   TransactionComponent,
+  //   TransactionEditComponent,
+  //   TransactionSearchComponent,
+  //   TransactionCockpitComponent,
+  //   TransactionResultsComponent
+  // ],
   imports: [
     CommonModule,
     FormsModule,
