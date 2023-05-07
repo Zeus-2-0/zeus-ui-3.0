@@ -33,7 +33,8 @@ jobs:
       - image: circleci/node:14.17.1
     steps:
       - checkout
-#      - run:
+      - run: sudo rm -rf /var/lib/apt/lists/*
+      - run: sudo apt-get update
 #          # added this comment
 #          command: |
 #            echo "deb http://deb.debian.org/debian stretch main" | sudo tee /etc/apt/sources.list.d/stretch.list
