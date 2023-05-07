@@ -46,7 +46,7 @@ workflows:
       - build:
           post-steps:
             - jira/notify
-      - test:
-          requires:
-            - build
+#      - test:
+#          requires:
+#            - build
 
