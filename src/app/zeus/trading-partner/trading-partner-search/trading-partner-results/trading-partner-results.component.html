@@ -1,1 +1,38 @@
-<p>trading-partner-results works!</p>
+<section class="intro">
+  <div class="bg-image h-100">
+    <div class="mask d-flex align-items-center h-100">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body p-0">
+                <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative;">
+                  <table class="table table-striped mb-0">
+                    <thead style="background-color: #002d72;">
+                    <tr>
+                      <th scope="col">Trading Partner name</th>
+                      <th scope="col">Trading Partner Id</th>
+                      <th scope="col">State</th>
+                      <th scope="col">Marketplace Type</th>
+                      <th scope="col">Business Unit</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let tp of tradingPartners" (click)="onSelect(tp.tradingPartnerId)" style="cursor: pointer">
+                        <td>{{tp.tradingPartnerName}}</td>
+                        <td>{{tp.tradingPartnerId}}</td>
+                        <td>{{tp.stateTypeCode}}</td>
+                        <td>{{tp.marketplaceTypeCode}}</td>
+                        <td>{{tp.businessUnitTypeCode}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
