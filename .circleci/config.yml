@@ -7,7 +7,7 @@ jobs:
 #    working_directory: ~/my-project
     docker:
 #      - image: cimg/node:16.13.1-browsers
-      - image: circleci/node:14.15.4
+      - image: circleci/node:14.17.1
     steps:
       - checkout
 #      - browser-tools/install-chrome
@@ -30,15 +30,15 @@ jobs:
 #          destination: my-app
   test:
     docker:
-      - image: circleci/node:14.15.4
+      - image: circleci/node:14.17.1
     steps:
       - checkout
       - run:
-          # added this comment
-          command: |
-            echo "deb http://deb.debian.org/debian stretch main" | sudo tee /etc/apt/sources.list.d/stretch.list
-            sudo apt-get update
-          name: Add Debian Stretch repository
+#          # added this comment
+#          command: |
+#            echo "deb http://deb.debian.org/debian stretch main" | sudo tee /etc/apt/sources.list.d/stretch.list
+#            sudo apt-get update
+#          name: Add Debian Stretch repository
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
       - run:
