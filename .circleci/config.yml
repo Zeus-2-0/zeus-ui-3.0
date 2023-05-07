@@ -40,10 +40,13 @@ jobs:
       - run: npm run test
 workflows:
   build-and-test:
+    environment:
+      API_URL: "http://localhost:80"
     jobs:
       - build:
           post-steps:
             - jira/notify
       - test:
-          environment:
-            API_URL: "http://localhost:80"
+          requires:
+            - build
+
