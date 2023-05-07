@@ -34,6 +34,7 @@ jobs:
     steps:
       - checkout
       - run:
+          # added this comment
           command: |
             echo "deb http://deb.debian.org/debian stretch main" | sudo tee /etc/apt/sources.list.d/stretch.list
             sudo apt-get update
