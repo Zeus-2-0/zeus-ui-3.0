@@ -39,7 +39,7 @@ jobs:
           command: |
             google-chrome --version
             chromedriver --version
-      name: Check install
+          name: Check install
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
       - run: npm install
