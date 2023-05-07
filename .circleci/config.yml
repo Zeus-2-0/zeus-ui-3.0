@@ -20,6 +20,8 @@ jobs:
   test:
     docker:
       - image: circleci/node:14.17.1-browsers
+    environment:
+      API_URL: "http://localhost:80"
     steps:
       - checkout
       - browser-tools/install-chrome
@@ -40,8 +42,6 @@ jobs:
       - run: npm run test
 workflows:
   build-and-test:
-    environment:
-      API_URL: "http://localhost:80"
     jobs:
       - build:
           post-steps:
