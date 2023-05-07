@@ -25,9 +25,9 @@ jobs:
           paths:
             - "node_modules"
       - run: npm run build --prod
-      - store_aritfacts:
-          path: dist/my-app
-          destination: my-app
+#      - store_aritfacts:
+#          path: dist/my-app
+#          destination: my-app
   test:
     docker:
       - image: circleci/node:14.15.4
