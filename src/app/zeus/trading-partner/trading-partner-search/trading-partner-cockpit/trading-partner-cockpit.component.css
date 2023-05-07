@@ -10,3 +10,8 @@ label{
   font-size: 1rem;
   color: grey;
 }
+
+.card-margin{
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
