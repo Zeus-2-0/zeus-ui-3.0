@@ -1,0 +1,105 @@
+<p>plan-detail works!</p>
+<div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item" *ngFor="let enrollmentSpan of enrollmentSpans;let indexOfelement=index">
+    <h2 class="accordion-header" id="{{enrollmentSpan.enrollmentSpanCode}}">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        Enrollment Span:  {{enrollmentSpan.startDate}} - {{enrollmentSpan.endDate}}
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+         data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+
+        <div class="row">
+          <div class="col-md-3">
+            <div
+              class="form-group mb-3">
+              <label for="planId">Plan</label>
+              <input type="text"
+                     class="form-control-plaintext"
+                     id="planId"
+                     name="planId"
+                     placeholder="{{enrollmentSpan.planId}}"
+                     required
+                     ngModel
+                     #tpId="ngModel"
+              >
+            </div>
+          </div>
+          <div class="col-md-3">
+            <label for="groupPolicyId">Group Policy Id</label>
+            <div
+              class="form-group mb-3">
+              <input
+                type="text"
+                class="form-control-plaintext"
+                id="groupPolicyId"
+                name="groupPolicyId"
+                placeholder="{{enrollmentSpan.groupPolicyId}}"
+                required
+                ngModel
+                #state="ngModel"
+              >
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div
+              class="form-group mb-3">
+              <label for="status">Status</label>
+              <input type="text"
+                     class="form-control-plaintext"
+                     id="status"
+                     name="status"
+                     placeholder="{{enrollmentSpan.statusTypeCode}}"
+                     required
+                     ngModel
+                     #tpId="ngModel"
+              >
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div
+              class="form-group mb-3">
+              <label for="exchangeSubscriberId">Exchange Subscriber Id</label>
+              <input type="text"
+                     class="form-control-plaintext"
+                     id="exchangeSubscriberId"
+                     name="exchangeSubscriberId"
+                     placeholder="{{enrollmentSpan.exchangeSubscriberId}}"
+                     required
+                     ngModel
+                     #tpId="ngModel"
+              >
+            </div>
+          </div>
+        </div>
+        <h5>Premium Spans</h5>
+        <div class="row">
+          <table class="table">
+            <thead>
+            <tr>
+              <th scope="col">Span Code</th>
+              <th scope="col">Start Date</th>
+              <th scope="col">End Date</th>
+              <th scope="col">Status</th>
+              <th scope="col">Total Premium Amount</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let premiumSpan of enrollmentSpan.premiumSpans">
+              <td>{{premiumSpan.premiumSpanCode}}</td>
+              <td>{{premiumSpan.startDate}}</td>
+              <td>{{premiumSpan.endDate}}</td>
+              <td>{{premiumSpan.statusTypeCode}}</td>
+              <td>{{premiumSpan.totalPremiumAmount}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

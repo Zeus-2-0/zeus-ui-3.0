@@ -25,7 +25,8 @@ export class AppComponent implements OnInit, OnDestroy{
    */
   ngOnInit(): void {
     this.authService.autoLogin();
-    console.log("API URL:", environment.apiUrl)
+    console.log("This the test variable URL:", environment.testEnvVariable);
+    console.log("API URL:", environment.apiUrl);
   }
 
   /**

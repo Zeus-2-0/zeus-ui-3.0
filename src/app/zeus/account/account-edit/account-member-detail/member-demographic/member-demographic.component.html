@@ -1,0 +1,130 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div
+        class="form-group mb-3">
+        <label for="memberCode">Member Code</label>
+        <input type="text"
+               class="form-control-plaintext"
+               id="memberCode"
+               name="memberCode"
+               placeholder="{{activeMember?.memberCode}}"
+               required
+               ngModel
+               #memberCode="ngModel"
+        >
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div
+        class="form-group mb-3">
+        <label for="memberFirstName">First Name</label>
+        <input type="text"
+               class="form-control-plaintext"
+               id="memberFirstName"
+               name="memberFirstName"
+               placeholder="{{activeMember?.firstName}}"
+               required
+               ngModel
+               #memberFirstName="ngModel"
+        >
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div
+        class="form-group mb-3">
+        <label for="memberLastName">Last Name</label>
+        <input type="text"
+               class="form-control-plaintext"
+               id="memberLastName"
+               name="memberLastName"
+               placeholder="{{activeMember?.lastName}}"
+               required
+               ngModel
+               #memberLastName="ngModel"
+        >
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="dateOfBirth">Date of Birth</label>
+      <div
+        class="form-group mb-3">
+        <input
+          type="text"
+          class="form-control-plaintext"
+          id="dateOfBirth"
+          name="dateOfBirth"
+          placeholder="{{activeMember?.dateOfBirth}}"
+          required
+          ngModel
+          #dateOfBirth="ngModel"
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <div
+        class="form-group mb-3">
+        <label for="relationshipTypeCode">Relationship</label>
+        <input type="text"
+               class="form-control-plaintext"
+               id="relationshipTypeCode"
+               name="relationshipTypeCode"
+               placeholder="{{activeMember?.relationshipTypeCode}}"
+               required
+               ngModel
+               #relationshipTypeCode="ngModel"
+        >
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div
+        class="form-group mb-3">
+        <label for="gender">Gender</label>
+        <input type="text"
+               class="form-control-plaintext"
+               id="gender"
+               name="gender"
+               placeholder="{{activeMember?.genderTypeCode}}"
+               required
+               ngModel
+               #gender="ngModel"
+        >
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div
+        class="form-group mb-3">
+        <label for="height">Height</label>
+        <input type="text"
+               class="form-control-plaintext"
+               id="height"
+               name="height"
+               placeholder="{{activeMember?.height}}"
+               required
+               ngModel
+               #height="ngModel"
+        >
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="weight">Weight</label>
+      <div
+        class="form-group mb-3">
+        <input
+          type="text"
+          class="form-control-plaintext"
+          id="weight"
+          name="weight"
+          placeholder="{{activeMember?.weight}}"
+          required
+          ngModel
+          #weight="ngModel"
+        >
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,1 +1,200 @@
-<p>trading-partner-edit works!</p>
+<div class="container-fluid">
+  <div class="row">
+    <!--    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">-->
+    <div class="col">
+      <div class="card border-0 shadow rounded-3 card-margin">
+        <div class="card-body p-4 p-sm-5">
+          <h5 class="card-title mb-4 fw-light fs-5">Trading Partner Details</h5>
+          <hr>
+          <form (ngSubmit)="onSubmit()" #tpForm="ngForm">
+            <div class="row">
+              <div class="col-md-3">
+                <div
+                  class="form-group mb-3">
+<!--                  <label for="tpId" *ngIf="!isEditMode">Trading Partner Id</label>-->
+                  <label for="tpId">Trading Partner Id</label>
+                  <input type="text"
+                         [ngClass]="{'form-control w-75': isEditMode, 'form-control-plaintext': !isEditMode}"
+                         id="tpId"
+                         name="tpId"
+                         placeholder=""
+                         required
+                         ngModel
+                         #tpId="ngModel"
+                  >
+<!--                  <label for="tpId" *ngIf="isEditMode">Trading Partner Id</label>-->
+                </div>
+              </div>
+              <div class="col-md-3">
+<!--                <label for="senderId" *ngIf="!isEditMode">Sender Id</label>-->
+                <label for="senderId">Sender Id</label>
+                <div
+                  class="form-group mb-3">
+                  <input
+                    type="text"
+                    [ngClass]="{'form-control w-75': isEditMode, 'form-control-plaintext': !isEditMode}"
+                    id="senderId"
+                    name="senderId"
+                    placeholder=""
+                    required
+                    ngModel
+                    #state="ngModel"
+                  >
+<!--                  <label for="senderId" *ngIf="isEditMode">Sender Id</label>-->
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div
+                  class="form-group mb-3">
+                  <!--                  <label for="tpId" *ngIf="!isEditMode">Trading Partner Id</label>-->
+                  <label for="receiverId">Receiver Id</label>
+                  <input type="text"
+                         [ngClass]="{'form-control w-75': isEditMode, 'form-control-plaintext': !isEditMode}"
+                         id="receiverId"
+                         name="receiverId"
+                         placeholder=""
+                         required
+                         ngModel
+                         #tpId="ngModel"
+                  >
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div
+                  class="form-group mb-3">
+                  <!--                  <label for="tpId" *ngIf="!isEditMode">Trading Partner Id</label>-->
+                  <label for="tpName">Trading Partner Name</label>
+                  <input type="text"
+                         [ngClass]="{'form-control w-75': isEditMode, 'form-control-plaintext': !isEditMode}"
+                         id="tpName"
+                         name="tpName"
+                         placeholder=""
+                         required
+                         ngModel
+                         #tpId="ngModel"
+                  >
+                </div>
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <label for="state">State</label>
+                <div
+                  class="form-group mb-3">
+                  <select class="form-select w-75"
+                          id="state"
+                          name="state"
+                          required
+                          ngModel
+                          [disabled]="!isEditMode"
+                          #state="ngModel"
+                  >
+                    <option *ngFor="let state of stateTypes" [value]="state.listCode">{{state.displayName}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <label for="lob">Line of Business</label>
+                <div
+                  class="form-group mb-3">
+                  <select class="form-select w-75"
+                          id="lob"
+                          name="lob"
+                          required
+                          ngModel
+                          [disabled]="!isEditMode"
+                          #lob="ngModel"
+                  >
+                    <option *ngFor="let lobType of lobTypes" [value]="lobType.listCode">{{lobType.displayName}}</option>
+                  </select>
+                </div>
+              </div>
+<!--              <div class="col-md-3">-->
+<!--                <label for="businessUnit" *ngIf="!isEditMode">Business Unit</label>-->
+<!--                <div-->
+<!--                  [ngClass]="{'form-floating': isEditMode}"-->
+<!--                  class="form-group mb-3">-->
+<!--                  <input-->
+<!--                    type="text"-->
+<!--                    [ngClass]="{'form-control': isEditMode, 'form-control-plaintext': !isEditMode}"-->
+<!--                    id="businessUnit"-->
+<!--                    name="businessUnit"-->
+<!--                    placeholder="Business Unit"-->
+<!--                    required-->
+<!--                    ngModel-->
+<!--                    #state="ngModel"-->
+<!--                  >-->
+<!--                  <label for="businessUnit" *ngIf="isEditMode">Business Unit</label>-->
+<!--                </div>-->
+<!--              </div>-->
+              <div class="col-md-3">
+                <label for="state">Business Unit</label>
+                <div
+                  class="form-group mb-3">
+                  <select class="form-select w-75"
+                          id="businessUnit"
+                          name="businessUnit"
+                          required
+                          ngModel
+                          [disabled]="!isEditMode"
+                          #state="ngModel"
+                  >
+                    <option *ngFor="let businessUnit of businessUnitTypes" [value]="businessUnit.listCode">{{businessUnit.displayName}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <label for="marketplace">Marketplace</label>
+                <div
+                  class="form-group mb-3">
+                  <select class="form-select w-75"
+                          id="marketplace"
+                          name="marketplace"
+                          required
+                          ngModel
+                          [disabled]="!isEditMode"
+                          #marketplace="ngModel"
+                  >
+                    <option *ngFor="let marketplaceType of marketplaceTypes" [value]="marketplaceType.listCode">{{marketplaceType.displayName}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <label for="description" *ngIf="!isEditMode">Description</label>
+                <div
+                  [ngClass]="{'form-floating': isEditMode}"
+                  class="form-group mb-3">
+                  <textarea
+                    type="textarea"
+                    [ngClass]="{'form-control': isEditMode, 'form-control-plaintext': !isEditMode}"
+                    id="description"
+                    name="description"
+                    placeholder="Description"
+                    rows="3"
+                    required
+                    ngModel
+                    #state="ngModel"
+                  ></textarea>
+                  <label for="description" *ngIf="isEditMode">Description</label>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-md-12">
+              <button [hidden]="!isEditMode" type="submit"
+                      class="btn btn-primary fw-bold" style="margin-right: 1%">Submit</button>
+              <button type="button" class="btn btn-secondary" style="margin-right: 1%">Clear</button>
+              <button type="button" class="btn btn-primary" style="width: 4%; margin-right: 1%" (click)="onEdit()">Edit</button>
+              <button type="button" class="btn btn-primary" style="width: 5%; margin-right: 1%" (click)="onCancelEdit()">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

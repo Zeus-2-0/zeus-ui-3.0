@@ -1,1 +1,12 @@
-<p>account-edit works!</p>
+<div class="container-fluid">
+  <h5 class="card-title mb-5 fw-light fs-5">Account > {{accountNumber}}</h5>
+  <div class="row">
+    <div class="col-lg-3" style="margin-bottom: 1%" *ngFor="let member of members">
+          <zeus-account-member memberCode="{{member.memberCode}}"></zeus-account-member>
+    </div>
+  </div>
+  <div class="row">
+    <zeus-account-member-detail activeMemberCode="{{primarySubscriberCode}}"></zeus-account-member-detail>
+    <router-outlet></router-outlet>
+  </div>
+</div>

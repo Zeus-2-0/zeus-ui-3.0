@@ -1,0 +1,11 @@
+<div class="container">
+
+  <div class="row">
+    <div *ngFor="let address of activeMember?.memberAddresses" class="col-6">
+      <zeus-member-address-detail [addressCode]="address.memberAddressCode">
+
+      </zeus-member-address-detail>
+    </div>
+  </div>
+
+</div>

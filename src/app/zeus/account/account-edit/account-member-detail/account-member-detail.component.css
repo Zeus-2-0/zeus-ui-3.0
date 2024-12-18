@@ -1,0 +1,28 @@
+h5{
+  font-family: "Ubuntu";
+  font-weight: 900; /* light */
+  font-size: 1rem;
+  color: grey;
+}
+label{
+  font-family: "Ubuntu";
+  font-weight: 50; /* light */
+  font-size: 0.7rem;
+  color: grey;
+}
+
+input, textarea, select{
+  font-family: "Ubuntu";
+  font-weight: 400; /* light */
+  font-size: 1rem;
+  color: grey;
+}
+
+.card-margin{
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.accordion-margin {
+  margin: 2%;
+}

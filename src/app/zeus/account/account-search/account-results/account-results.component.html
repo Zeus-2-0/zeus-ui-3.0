@@ -1,1 +1,33 @@
-<p>account-results works!</p>
+<section class="intro">
+  <div class="bg-image h-100">
+    <div class="mask d-flex align-items-center h-100">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body p-0">
+                <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative;">
+                  <table class="table table-striped mb-0">
+                    <thead style="background-color: #002d72;">
+                    <tr>
+                      <th scope="col">Account Number</th>
+                      <th scope="col">Line of Business</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let account of accounts" (click)="onSelect(account.accountNumber)" style="cursor: pointer">
+                      <td>{{account.accountNumber}}</td>
+                      <td>{{account.lineOfBusinessTypeCode}}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
