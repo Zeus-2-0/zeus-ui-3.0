@@ -1,5 +1,10 @@
 export class TradingPartner{
   /**
+   * Trading partner sk that uniquely identifies the trading partner in the system
+   */
+  tradingPartnerSK !: string | null | undefined;
+
+  /**
    * Trading partner id of the trading partner
    */
   tradingPartnerId!: string;
@@ -7,7 +12,7 @@ export class TradingPartner{
   /**
    * Name of the trading partner
    */
-  tradingPartnerName!: string;
+  name!: string;
 
   /**
    * Short description of the trading partner
@@ -66,7 +71,7 @@ export class TradingPartner{
               marketplaceTypeCode: string,
               stateTypeCode: string) {
     this.tradingPartnerId = tradingPartnerId;
-    this.tradingPartnerName = tradingPartnerName;
+    this.name = tradingPartnerName;
     this.description = description;
     this.senderId = senderId;
     this.receiverId = receiverId;

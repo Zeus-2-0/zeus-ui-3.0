@@ -77,10 +77,11 @@ export class AuthService {
     // set the user in the subject for the application to know about the user who is authenticated
     console.log("About to emit the authentication object:", authentication);
     this.loggedInUser.next(authentication);
-    const expiryDate = new Date(+authentication.authExpiration[0], +authentication.authExpiration[1]-1, +authentication.authExpiration[2],
-                                +authentication.authExpiration[3], +authentication.authExpiration[4], +authentication.authExpiration[5]);
-    console.log("Expiry date:",expiryDate);
-    const expirationDuration = new Date(expiryDate).getTime() - new Date().getTime();
+    // const expiryDate = new Date(+authentication.authExpiration[0], +authentication.authExpiration[1]-1, +authentication.authExpiration[2],
+    //                             +authentication.authExpiration[3], +authentication.authExpiration[4], +authentication.authExpiration[5]);
+    // console.log("Expiry date:",expiryDate);
+    console.log("auth expiration:",authentication.authExpiration);
+    const expirationDuration = new Date(authentication.authExpiration).getTime() - new Date().getTime();
     this.autoLogout(expirationDuration);
     return apiResponse;
   }
@@ -93,9 +94,9 @@ export class AuthService {
     const authData:Authentication | null = JSON.parse(localStorage.getItem('authData'));
     if(authData){
       this.loggedInUser.next(authData);
-      const expiryDate = new Date(+authData.authExpiration[0], +authData.authExpiration[1]-1, +authData.authExpiration[2],
-        +authData.authExpiration[3], +authData.authExpiration[4], +authData.authExpiration[5]);
-      const expirationDuration = new Date(expiryDate).getTime() - new Date().getTime();
+      // const expiryDate = new Date(+authData.authExpiration[0], +authData.authExpiration[1]-1, +authData.authExpiration[2],
+      //   +authData.authExpiration[3], +authData.authExpiration[4], +authData.authExpiration[5]);
+      const expirationDuration = new Date(authData.authExpiration).getTime() - new Date().getTime();
       this.autoLogout(expirationDuration);
     }else{
       return;

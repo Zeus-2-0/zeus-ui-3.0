@@ -1,0 +1,95 @@
+<div class="card">
+  <div class="card-header">
+    {{memberAddress?.addressTypeCode}}
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-4">
+        <div
+          class="form-group mb-3">
+          <label for="addressLine1">Address Line 1</label>
+          <input type="text"
+                 class="form-control-plaintext"
+                 id="addressLine1"
+                 name="addressLine1"
+                 placeholder="{{memberAddress?.addressLine1}}"
+                 required
+                 ngModel
+                 #addressLine1="ngModel"
+          >
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="addressLine2">Address Line 2</label>
+        <div
+          class="form-group mb-3">
+          <input
+            type="text"
+            class="form-control-plaintext"
+            id="addressLine2"
+            name="addressLine2"
+            placeholder="{{memberAddress?.addressLine2}}"
+            required
+            ngModel
+            #addressLine2="ngModel"
+          >
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div
+          class="form-group mb-3">
+          <label for="city">City</label>
+          <input type="text"
+                 class="form-control-plaintext"
+                 id="city"
+                 name="city"
+                 placeholder="{{memberAddress?.city}}"
+                 required
+                 ngModel
+                 #city="ngModel"
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-4">
+        <label for="state">State</label>
+        <div
+          class="form-group mb-3">
+          <input
+            type="text"
+            class="form-control-plaintext"
+            id="state"
+            name="state"
+            placeholder="{{memberAddress?.stateTypeCode}}"
+            required
+            ngModel
+            #state="ngModel"
+          >
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="zip">Zip</label>
+        <div
+          class="form-group mb-3">
+          <input
+            type="text"
+            class="form-control-plaintext"
+            id="zip"
+            name="zip"
+            placeholder="{{memberAddress?.zipCode}}"
+            required
+            ngModel
+            #zip="ngModel"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

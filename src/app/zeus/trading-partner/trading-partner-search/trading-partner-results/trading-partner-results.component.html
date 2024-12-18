@@ -19,7 +19,7 @@
                     </thead>
                     <tbody>
                       <tr *ngFor="let tp of tradingPartners" (click)="onSelect(tp.tradingPartnerId)" style="cursor: pointer">
-                        <td>{{tp.tradingPartnerName}}</td>
+                        <td>{{tp.name}}</td>
                         <td>{{tp.tradingPartnerId}}</td>
                         <td>{{tp.stateTypeCode}}</td>
                         <td>{{tp.marketplaceTypeCode}}</td>

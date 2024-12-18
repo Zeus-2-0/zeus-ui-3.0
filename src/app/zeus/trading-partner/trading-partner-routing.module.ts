@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'zeus/trading-partner', component: TradingPartnerComponent, canActivate:[AuthGuardService], children:[
       { path: 'search', component: TradingPartnerSearchComponent},
       { path: 'new', component: TradingPartnerEditComponent},
-      { path: ':id', component: TradingPartnerEditComponent}
+      { path: ':tradingPartnerId', component: TradingPartnerEditComponent}
     ]
   }
 ]
